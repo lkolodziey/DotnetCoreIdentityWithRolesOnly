@@ -1,0 +1,48 @@
+﻿@page
+@model DotnetCoreIdentityWithRolesOnly.Pages.ListRolesModel
+@{
+    ViewData["Title"] = "ListRoles";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>List Roles</h2>
+<a href="AddRole">Adicionar nova Role</a>
+<table class="table table-condensed">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Normalized Name
+        </th>
+        <th>
+            Current Timestamp
+        </th>
+        <th>
+            Data Inclusão
+        </th>
+    </tr>
+    @foreach (var item in Model.Roles)
+    {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.NormalizedName
+            </td>
+            <td>
+                @item.ConcurrencyStamp
+            </td>
+            <td>
+                @item.DataInclusao
+            </td>
+        </tr>
+    }
+</table>
